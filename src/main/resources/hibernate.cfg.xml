@@ -3,6 +3,7 @@
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">  
 <hibernate-configuration>
 	<session-factory>
+		
 		<!-- 配置使用Driver -->
 		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 		<property name="connection.username">test</property>
@@ -20,6 +21,8 @@
 			update 加载hibernate自动更新数据库结构
 			validate 加载hibernate时，验证创建数据库表结构 -->
 		<property name="hbm2ddl.auto">update</property>
+		
 		<mapping class="com.lb.springmvc.domain.User"/>
+		
 	</session-factory>
 </hibernate-configuration>

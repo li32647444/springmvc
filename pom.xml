@@ -4,7 +4,7 @@
 
 	<groupId>springmvc</groupId>
 	<artifactId>springmvc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>     
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>springmvc</name>
@@ -12,6 +12,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- 声明版本号，以后统一在这里进行管理-->
+		<spring.version>4.3.3.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
@@ -21,8 +23,9 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
-		
-		<!-- mvn install:install-file -Dfile=oracle-2.0.jar -DgroupId=com.lb.oracle -DartifactId=oracle -Dversion=2.0 -Dpackaging=jar -->
+
+		<!-- mvn install:install-file -Dfile=oracle-2.0.jar -DgroupId=com.lb.oracle 
+			-DartifactId=oracle -Dversion=2.0 -Dpackaging=jar -->
 		<dependency>
 			<groupId>com.lb.oracle</groupId>
 			<artifactId>oracle</artifactId>
@@ -30,7 +33,8 @@
 		</dependency>
 
 		<!-- hibernate -->
-		<!-- The core O/RM functionality as provided by Hibernate 通过Hibernate提供核心的O / RM的功能-->
+		<!-- The core O/RM functionality as provided by Hibernate 通过Hibernate提供核心的O 
+			/ RM的功能 -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -43,5 +47,63 @@
 			<artifactId>c3p0</artifactId>
 			<version>0.9.1.2</version>
 		</dependency>
+
+		<!-- dbcp连接池需要的jar包 -->
+		<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<!-- spring需要的jar包 -->  
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+		<!-- spring 提供在基础 IoC 功能上的扩展服务，此外还提供许多企业级服务的支持，
+			如 邮件服务、任务调度、JNDI定位、EJB 集成、远程访问、 缓存以及各种视图层框架的封装等。 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		<!-- 包含Spring框架基本的核心工具类，Spring其它组件要都要使用到这个包里的类，是其它组件的基本核心。 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-core</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+		<!-- springIoC（依赖注入）的基础实现，所有应用都要用到的，它包含访问配置文件、创建和 管理bean
+			以及进行Inversion of Control / Dependency Injection（IoC/DI）操作相关的所有类。 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-beans</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+		<!-- 包含Spring对DAO特性集进行了扩展，使其支持 iBATIS、JDO、OJB、TopLink，
+			因为Hibernate 已经独立成包了，现在不包含在这个包里了。
+			这个jar文件里大部分的类都要依赖spring-dao.jar里的类，用这个包时你需要同时包含spring-dao.jar包  -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-orm</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		<!-- spring jar end -->  
+		
+		
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>4.0.0-b01</version>
+		</dependency>
+		
 	</dependencies>
 </project>
