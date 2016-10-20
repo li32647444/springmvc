@@ -60,11 +60,11 @@
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<!-- spring 提供在基础 IoC 功能上的扩展服务，此外还提供许多企业级服务的支持，
 			如 邮件服务、任务调度、JNDI定位、EJB 集成、远程访问、 缓存以及各种视图层框架的封装等。 -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
-		</dependency> -->
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 		<!-- 包含Spring框架基本的核心工具类，Spring其它组件要都要使用到这个包里的类，是其它组件的基本核心。 -->
 		<dependency>

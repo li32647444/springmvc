@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
+	<!-- Spring view分发器 前端处理器，接受的HTTP请求和转发请求的类。 -->
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<!-- 指定Spring IoC容器需要读取的定义了非web层的Bean（DAO/Service）的XML文件路径。 -->
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>*.action</url-pattern>
+	</servlet-mapping>
+	
+
+	<!-- 首页（默认连接） -->
 	<welcome-file-list>
 		<welcome-file>view/index.jsp</welcome-file>
 	</welcome-file-list>

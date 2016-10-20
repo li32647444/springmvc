@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 	
-	@RequestMapping(value = "toLogin")
+	@RequestMapping(value = "toIndex")
 	public String toIndex(HttpServletRequest request,HttpServletResponse response){
-		return "";
+		return "index";
 	}
 	
 }
