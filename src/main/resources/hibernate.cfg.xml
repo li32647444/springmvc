@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">  
+<hibernate-configuration>
+	<session-factory>
+		<!-- 配置使用Driver -->
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.username">test</property>
+		<property name="connection.password">qwer1234</property>
+		<property name="connection.url">jdbc:oracle:thin:@192.168.8.112:1521:orcl</property>
+		<!-- 指定数据库使用的SQL方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<!-- 指定当程序运行时是否在控制台输出SQL语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!--显示的sql语句格式化--> 
+		<property name="hibernate.format_sql">true</property>
+		<!-- 配置hbm2ddl.auto，供可选选项有：
+			create 每次加载hibernate，重新创建数据库表结构
+			create-drop 加载hibernate时创建，退出是删除表结构
+			update 加载hibernate自动更新数据库结构
+			validate 加载hibernate时，验证创建数据库表结构 -->
+		<property name="hbm2ddl.auto">update</property>
+		<mapping class="com.lb.springmvc.domain.User"/>
+	</session-factory>
+</hibernate-configuration>
