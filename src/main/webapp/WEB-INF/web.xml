@@ -19,6 +19,6 @@
 	
 	<!-- 首页（默认连接） -->
 	<welcome-file-list>
-		<welcome-file>/</welcome-file>
+		<welcome-file>toIndex</welcome-file>
 	</welcome-file-list>
 </web-app>
