@@ -12,7 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<!-- 声明版本号，以后统一在这里进行管理-->
+		<!-- 声明版本号，以后统一在这里进行管理 -->
 		<spring.version>4.3.3.RELEASE</spring.version>
 	</properties>
 
@@ -56,10 +56,10 @@
 			<version>1.4</version>
 		</dependency>
 
-		<!-- spring需要的jar包 -->  
+		<!-- spring需要的jar包 -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-		<!-- spring 提供在基础 IoC 功能上的扩展服务，此外还提供许多企业级服务的支持，
-			如 邮件服务、任务调度、JNDI定位、EJB 集成、远程访问、 缓存以及各种视图层框架的封装等。 -->
+		<!-- spring 提供在基础 IoC 功能上的扩展服务，此外还提供许多企业级服务的支持， 如 邮件服务、任务调度、JNDI定位、EJB 
+			集成、远程访问、 缓存以及各种视图层框架的封装等。 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -68,41 +68,40 @@
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 		<!-- 包含Spring框架基本的核心工具类，Spring其它组件要都要使用到这个包里的类，是其它组件的基本核心。 -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-core</artifactId>
-		    <version>${spring.version}</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
-		<!-- springIoC（依赖注入）的基础实现，所有应用都要用到的，它包含访问配置文件、创建和 管理bean
-			以及进行Inversion of Control / Dependency Injection（IoC/DI）操作相关的所有类。 -->
+		<!-- springIoC（依赖注入）的基础实现，所有应用都要用到的，它包含访问配置文件、创建和 管理bean 以及进行Inversion 
+			of Control / Dependency Injection（IoC/DI）操作相关的所有类。 -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-beans</artifactId>
-		    <version>${spring.version}</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-webmvc</artifactId>
-		    <version>${spring.version}</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
-		<!-- 包含Spring对DAO特性集进行了扩展，使其支持 iBATIS、JDO、OJB、TopLink，
-			因为Hibernate 已经独立成包了，现在不包含在这个包里了。
-			这个jar文件里大部分的类都要依赖spring-dao.jar里的类，用这个包时你需要同时包含spring-dao.jar包  -->
+		<!-- 包含Spring对DAO特性集进行了扩展，使其支持 iBATIS、JDO、OJB、TopLink， 因为Hibernate 已经独立成包了，现在不包含在这个包里了。 
+			这个jar文件里大部分的类都要依赖spring-dao.jar里的类，用这个包时你需要同时包含spring-dao.jar包 -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-orm</artifactId>
-		    <version>${spring.version}</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
-		<!-- spring jar end -->  
-		
-		
+		<!-- spring jar end -->
+
+
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>javax.servlet-api</artifactId>
-		    <version>4.0.0-b01</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.0-b01</version>
 		</dependency>
 		
 	</dependencies>
