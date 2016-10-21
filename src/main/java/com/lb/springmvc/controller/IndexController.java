@@ -10,12 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class IndexController {
 	
-	@RequestMapping(value = "/",method = RequestMethod.GET)
-	public String toIndex_First(HttpServletRequest request,HttpServletResponse response){
-		return "index";
-	}
-	
-	@RequestMapping(value = "/toIndex",method = RequestMethod.GET)
+	@RequestMapping(value = {"/","toIndex"},method = RequestMethod.GET)
 	public String toIndex(HttpServletRequest request,HttpServletResponse response){
 		System.out.println("IndexController.toIndex()==>");
 		return "index";
