@@ -14,11 +14,15 @@
         http://www.springframework.org/schema/mvc   
         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd   
         http://www.springframework.org/schema/tx   
-        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
-        ">  
+        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">  
 
+	<!-- 配置注解方式的扫描范围 -->
     <context:component-scan base-package="com.lb.springmvc" />
     
+    <!-- 向Spring容器注册HandlerAdapter实现类。它是处理请求的适配器。 -->
+    <!-- 在需要访问静态资源时，如果Spring的Dispatcher映射的是所有访问（/）在配置 文件中
+    	只配置<context:component-scan/>不配置<mvc:annotation-driven/>时请求无法进入相应的controller；
+    	如果Dispatcher映射是*.do的形式，是可以访问的。 -->
     <mvc:annotation-driven />
 
 	<!-- 进行配置静态资源访问的 -->
