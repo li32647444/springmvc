@@ -15,7 +15,7 @@ public class IndexController {
 	// 添加slf4j日志实例对象
 	private final static Logger logger = LoggerFactory.getLogger(IndexController.class);
 
-	@RequestMapping(value = {"/","toIndex"},method = RequestMethod.GET)
+	@RequestMapping(value = {"toIndex"},method = RequestMethod.GET)
 	public String toIndex(HttpServletRequest request,HttpServletResponse response){
 		logger.info("IndexController.toIndex()==>");
 		return "index";

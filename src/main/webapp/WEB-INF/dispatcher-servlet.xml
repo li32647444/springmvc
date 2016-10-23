@@ -27,6 +27,7 @@
 
 	<!-- 进行配置静态资源访问的 -->
     <mvc:resources location="/images/" mapping="/images/**"/>
+    <mvc:resources location="/plugins/" mapping="/plugins/**"/>
 	
   	<!-- 渲染结果，handler method返回的modelAndView基础上，加上目录前缀/WEB-INF/views/和文件名称后缀.jsp。
   		例如结果返回的viewName为helloworld，则对应的实际jsp为/WEB-INF/views/helloworld.jsp
