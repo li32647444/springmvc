@@ -18,8 +18,13 @@ public class LoginController {
 	public String toLogin(HttpServletRequest request, HttpServletResponse response) {
 		return "login";
 	}
+	
+	@RequestMapping(value = { "toQQLogin" }, method = RequestMethod.GET)
+	public String toQQLogin(HttpServletRequest request, HttpServletResponse response) {
+		return "qqlogin";
+	}
 
-	@RequestMapping(value = { "login" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "login" }, method = RequestMethod.POST)
 	public String login(HttpServletRequest request, HttpServletResponse response) {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");

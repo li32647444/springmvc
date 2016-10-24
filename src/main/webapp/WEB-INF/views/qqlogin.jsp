@@ -12,8 +12,8 @@
     <base href="<%=basePath%>">   
 </head>
 <body>
-	<center>
-		<b>这是主页！！！！！！！</b>
+	<center style="margin-top: 200px;">
+		<img alt="" src="images/qq_login.png" />
 	</center>
 </body>
 </html>
