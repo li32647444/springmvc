@@ -21,4 +21,9 @@ public class IndexController {
 		return "index";
 	}
 	
+	@RequestMapping(value = {"toNotFound"},method = RequestMethod.GET)
+	public String toNotFound(HttpServletRequest request,HttpServletResponse response){
+		return "notFound";
+	}
+	
 }

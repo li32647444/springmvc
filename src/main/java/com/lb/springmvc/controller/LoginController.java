@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 
+	@SuppressWarnings("unused")
 	private final static Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@RequestMapping(value = { "/", "toLogin" }, method = RequestMethod.GET)

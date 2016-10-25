@@ -1,22 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-<title>登录</title>
-<!-- Bootstrap -->
-<link
-	href="<%=request.getContextPath()%>/plugins/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet">
-</head>
-<body class="container" style="width: 300px; margin-top: 100px;">
-	<h1 class="text-center">登录</h1>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="include/head.jsp"%>
+
+<body class="container" style="width: 300px;">
 	<form action="login" id="loginForm" method="post">
+		<h1 class="text-center">登录</h1>
 		<input type="hidden" id="location" name="location">
 		<div class="form-group">
 			<label for="exampleInputUserName">邮箱/用户名/手机号：</label> <input
@@ -43,16 +30,20 @@
 			<p>${msg}</p>
 		</div>
 	</c:if>
-
-	<script
-		src="<%=request.getContextPath()%>/plugins/bootstrap/js/jquery-1.10.2.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script
-		src="<%=request.getContextPath()%>/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		function login() {
 			$("#loginForm").submit();
 		}
+		/* $(window).resize(function(){ 
+		    $("#loginForm").css({ 
+		        position: "absolute", 
+		        left: ($(window).width() - $("#loginForm").outerWidth())/2, 
+		        top: ($(window).height() - $("#loginForm").outerHeight())/2-200
+		    });        
+		}); 
+		$(function(){ 
+		    $(window).resize(); 
+		});  */
 	</script>
 </body>
 </html>
