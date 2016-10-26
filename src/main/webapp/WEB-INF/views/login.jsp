@@ -1,7 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ include file="include/head.jsp"%>
 
-<body class="container" style="width: 300px;">
+<body class="container verticalCentering"
+	style="max-width: 350px; min-height: 400px;">
 	<form action="login" id="loginForm" method="post">
 		<h1 class="text-center">登录</h1>
 		<input type="hidden" id="location" name="location">
@@ -23,27 +25,26 @@
 			<label for="loginByThree">第三方登录：</label> <a href="toQQLogin"><img
 				src="images/qqlogin.ico" width="20px" height="20px" /></a>
 		</div>
+		<c:if test="${msg!=null}">
+			<div class="alert alert-success" role="alert">
+				<button class="close" data-dismiss="alert" type="button">&times;</button>
+				<p id="msg">${msg}</p>
+			</div>
+		</c:if>
 	</form>
-	<c:if test="${msg!=null}">
-		<div class="alert alert-success" role="alert">
-			<button class="close" data-dismiss="alert" type="button">&times;</button>
-			<p>${msg}</p>
-		</div>
-	</c:if>
 	<script type="text/javascript">
 		function login() {
+			/* if ("" == $("#userName").val()) {
+				$("#msg").html("用户名不能为空！！！");
+				$("#close").alert("close");
+				return;
+			} else if("" == $("#password").val()){
+				$("#msg").html("密码不能为空！！！");
+				$("#close").alert("close");
+				return;
+			} */
 			$("#loginForm").submit();
 		}
-		/* $(window).resize(function(){ 
-		    $("#loginForm").css({ 
-		        position: "absolute", 
-		        left: ($(window).width() - $("#loginForm").outerWidth())/2, 
-		        top: ($(window).height() - $("#loginForm").outerHeight())/2-200
-		    });        
-		}); 
-		$(function(){ 
-		    $(window).resize(); 
-		});  */
 	</script>
 </body>
 </html>

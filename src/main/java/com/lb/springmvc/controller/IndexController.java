@@ -17,7 +17,6 @@ public class IndexController {
 
 	@RequestMapping(value = {"toIndex"},method = RequestMethod.GET)
 	public String toIndex(HttpServletRequest request,HttpServletResponse response){
-		logger.info("IndexController.toIndex()==>");
 		return "index";
 	}
 	
