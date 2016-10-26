@@ -9,12 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.lb.springmvc.controller.base.BaseController;
 import com.lb.springmvc.domain.User;
 import com.lb.springmvc.service.UserService;
 
 @Controller
-public class LoginController {
+public class LoginController extends BaseController{
 
 	@Autowired
 	private UserService userService;
@@ -35,24 +37,30 @@ public class LoginController {
 	public String toQQLogin(HttpServletRequest request, HttpServletResponse response) {
 		return "qqlogin";
 	}
+	
+	@RequestMapping(value = { "toShakeLogin" }, method = RequestMethod.GET)
+	public String toShakeLogin(HttpServletRequest request, HttpServletResponse response) {
+		return "login/shakeLogin";
+	}
 
-	@RequestMapping(value = { "login" }, method = RequestMethod.POST)
+	@RequestMapping(value = { "login" }, method = RequestMethod.POST,produces="text/plain;charset=UTF-8")
+	@ResponseBody
 	public String login(HttpServletRequest request, HttpServletResponse response) {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		if(username == null || "".equals(username)){
 			request.setAttribute("msg", "请输入用户名！");
-			return "login";
+			return "请输入用户名！";
 		} else if(password == null || "".equals(password)){
 			request.setAttribute("msg", "请输入密码！");
-			return "login";
+			return "请输入密码！";
 		}
 		User user = userService.findByUserNameAndPassword(username, password);
-		if(user==null){
+		if(user == null){
 			request.setAttribute("msg", "用户名或者密码错误！");
-			return "login";
+			return "用户名或者密码错误！";
 		}
-		return "redirect:toIndex";
+		return "success";
 	}
 
 }

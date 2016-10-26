@@ -15,6 +15,7 @@
 <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 <base href="<%=basePath%>">
 <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="plugins/custom/css/shake.css" rel="stylesheet">
 </head>
 
 <script src="plugins/bootstrap/js/jquery-1.10.2.min.js"></script>
