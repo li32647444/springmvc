@@ -12,9 +12,8 @@
        http://www.springframework.org/schema/task/spring-task-4.0.xsd
        ">
 
-	<!-- <context:component-scan base-package="com.lb.springmvc" /> 
-		<context:annotation-config 
-		/> -->
+	<context:component-scan base-package="com.lb.springmvc" />
+	<context:annotation-config />
 
 	<!-- proptery 配置 -->
 	<bean id="propertyConfigurer"
@@ -110,6 +109,7 @@
 				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
 				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
 				<prop key="hibernate.format_sql">true</prop>
+				<!-- <prop key="current_session_context_class">thread</prop> -->
 				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
 				<prop key="hibernate.query.substitutions">${hibernate.query.substitutions}</prop>
 				<prop key="hibernate.default_batch_fetch_size">${hibernate.default_batch_fetch_size}</prop>
@@ -127,20 +127,17 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager"/>
 	<!-- 定义事务规则 -->
-	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="save*" propagation="REQUIRED" />
-			<tx:method name="modify*" propagation="REQUIRED" />
-			<tx:method name="del*" propagation="REQUIRED" />
-			<tx:method name="*" propagation="REQUIRED" read-only="true" />
-		</tx:attributes>
-	</tx:advice> -->
+	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager"> 
+		<tx:attributes> <tx:method name="save*" propagation="REQUIRED" /> <tx:method 
+		name="modify*" propagation="REQUIRED" /> <tx:method name="del*" propagation="REQUIRED" 
+		/> <tx:method name="*" propagation="REQUIRED" read-only="true" /> </tx:attributes> 
+		</tx:advice> -->
 	<!-- 定义事务入口 -->
-	<!-- <aop:config>
-		<aop:pointcut id="txPointcut"
-			expression="execution(* com.lb.springmvc..service..*.*(..))" />
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
-	</aop:config> -->
+	<!-- <aop:config> <aop:pointcut id="txPointcut" expression="execution(* 
+		com.lb.springmvc..service..*.*(..))" /> <aop:advisor advice-ref="txAdvice" 
+		pointcut-ref="txPointcut" /> </aop:config> -->
 
 </beans>
