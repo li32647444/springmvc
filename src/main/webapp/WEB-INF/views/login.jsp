@@ -51,9 +51,11 @@
 				var password = $("#password").val();
 				if ("" == username) {
 					$("#msg").html("用户名不能为空！！！");
+					$("#userName").focus();
 					shakeLoginForm();
 					return;
 				} else if("" == password){
+					$("#password").focus();
 					$("#msg").html("密码不能为空！！！");
 					shakeLoginForm();
 					return;
