@@ -22,7 +22,7 @@ public class UserServiceImpl extends BaseServiceImpl<User, UserDao> implements U
 	}
 	
 	public User findByUserNameAndPassword(String userName, String password) {
-		List<User> users = userDao.getByObject(new User(userName,password));
+		List<User> users = userDao.getByObject(new User(userName,password,1));
 		if(users == null || users.isEmpty()){
 			return null;
 		} else if(users.size()==1){

@@ -27,14 +27,14 @@ public class UserCRUDTest {
 	
 	@Test
 	public void add(){
-		User user = new User("admin","123456");
+		User user = new User("admin","123456",1);
 		Hibernate4Util.getCurrentSession().save(user);
 		System.out.println("Save success!");
 	}
 	
 	@Test
 	public void save(){
-		User user = new User("admin","123456");
+		User user = new User("admin","123456",1);
 		Session session = Hibernate4Util.getCurrentSession();
 		Transaction tx = session.beginTransaction();
 		session.save(user);

@@ -51,7 +51,7 @@ public class UserServiceTest {
 
 	@Test
 	public void add(){
-		User add  = new User("1","1");
+		User add  = new User("1","1",1);
 		userService.add(add);
 		list();
 	}
