@@ -159,12 +159,37 @@ body {
 				}, 1);
 			}
 		}
+		//晃动表单
+		function shakeLoginForm() {
+			$("#login_form").removeClass('shake_effect');
+			setTimeout(function() {
+				$("#login_form").addClass('shake_effect')
+			}, 1);
+		}
+		
+		
 		function check_register() {
 			var name = $("#r_user_name").val();
 			var pass = $("#r_password").val();
 			var email = $("r_email").val();
-			if (name != "" && pass == "" && email != "") {
-				alert("注册成功！");
+			if (name != "" && pass != "" && email != "") {
+				$.ajax({
+					url : "register",
+					type : "post",
+					data : {"username":name,"password":pass},
+					success : function(data) {
+						if("success" == data){
+							alert("注册成功！");
+							location.href = "toLogin";
+						} else {
+							alert(data);
+							shakeLoginForm();
+						}
+					},
+					error: function() {
+						shakeLoginForm();
+			        }
+				});
 				$("#user_name").val("");
 				$("#password").val("");
 			} else {
