@@ -3,7 +3,7 @@
 <mapper namespace="com.lb.springmvc.mybatis.dao.UserDao">
 	<!--配置一个resultMap 指定返回的类型 -->
     <resultMap id="user" type="com.lb.springmvc.domain.User">
-        <id column="user_id" property="id" />
+        <id column="USER_ID" property="id" />
         <result column="USER_NAME" property="userName" />
         <result column="USER_PASSWORD" property="password" />
         <result column="USER_STATE" property="state" />
