@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lb.springmvc.mybatis.dao.UserDao">
+	<!--配置一个resultMap 指定返回的类型 -->
+    <resultMap id="user" type="com.lb.springmvc.domain.User">
+        <id column="user_id" property="id" />
+        <result column="USER_NAME" property="userName" />
+        <result column="USER_PASSWORD" property="password" />
+        <result column="USER_STATE" property="state" />
+    </resultMap>
+
+	<select id="list" resultMap="user">
+		select * from sys_user where 1=1 
+	</select>
+	
+	<select id="findById" parameterType="Long" resultMap="user">
+		select * from sys_user where user_id= #{id}
+	</select>
+	
+	<insert id="add" parameterType="com.lb.springmvc.domain.User">
+		<selectKey keyProperty="id" resultType="Long" order="BEFORE">
+			select SEQ_SYS_USER.nextval from dual
+		</selectKey>
+		insert into sys_user(USER_ID,USER_NAME,USER_PASSWORD,USER_STATE)  
+             values(#{id},#{userName},#{password},#{state})  
+	</insert>
+	
+	<update id="update" parameterType="com.lb.springmvc.domain.User">
+		update sys_user set USER_NAME=#{userName},USER_PASSWORD=#{password},USER_STATE=#{state}
+		   where USER_ID=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="Long">
+		delete sys_user where USER_ID=#{id}
+	</delete>
+</mapper>
